@@ -8,7 +8,7 @@
     "start": "vite --port 3000",
     "dev": "start",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "lint": "npx --node-options='--experimental-strip-types' eslint --flag unstable_native_nodejs_ts_config .",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -17,7 +17,6 @@
     "react-dom": "^18.3.1",
     "react-ga": "^3.3.1",
     "react-router-dom": "^6.26.0",
-    "react-scroll": "^1.9.0",
     "react-transition-group": "^4.4.5",
     "sass": "^1.92.1",
     "styled-components": "^6.1.19",
