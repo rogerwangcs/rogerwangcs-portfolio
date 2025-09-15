@@ -1,93 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
+import { Cube, CubeData } from "./Cube";
 
-import styled, { css, keyframes } from "styled-components";
-import { viewport } from "../../constants/viewport";
-import theme from "../../constants/theme";
-
-interface CubeData {
-  key: number;
-  x?: number;
-  y?: number;
-}
-
-interface CubeProps extends CubeData {
-  duration?: number;
-}
-
-const cubeAnimation = keyframes`
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  25% {
-    opacity: 1;
-    transform: scale(1) translateY(50px);
-    transform-origin: 50% 50%;
-  }
-  75% {
-    opacity: 1;
-    transform: scale(1) translateY(250px);
-    transform-origin: 50% 300px;
-  }
-
-  100% {
-    opacity: 0;
-    transform: scale(0.5) translateY(300px);
-    transform-origin: 50% 300px;
-  }
-`;
-
-const cubeAnimationRule = css`
-  ${cubeAnimation} 10s;
-`;
-
-const StyledCube = styled.div`
-  z-index: -101;
-  position: absolute;
-
-  width: 75px;
-  height: 75px;
-  background-color: ${theme.blue};
-
-  opacity: 0;
-  transform: scale(0);
-
-  -webkit-backface-visibility: hidden;
-  transform-origin: center;
-  animation: ${cubeAnimationRule};
-  animation-timing-function: linear;
-  animation-delay: 0ms;
-  animation-fill-mode: forwards;
-
-  @media (max-width: ${viewport.MOBILE}) {
-    width: 65px;
-    height: 65px;
-  }
-`;
-
-const Cube: React.FC<CubeProps> = ({ x, y, ...props }) => {
-  const [display, setDisplay] = useState<string>("block");
-
-  useEffect(() => {
-    const timeout = window.setTimeout(() => setDisplay("none"), 10000);
-    return () => clearTimeout(timeout);
-  }, []);
-
-  return (
-    <StyledCube
-      style={{
-        position: "absolute",
-        top: y + "vh",
-        left: x + "vw",
-        display: display,
-      }}
-      {...props}
-    />
-  );
-};
-
-const Cubes: React.FC = () => {
-  const [cubes, setCubes] = useState<CubeData[]>([{ key: 0 }]);
+export const Cubes = () => {
+  const [cubes, setCubes] = useState<CubeData[]>([]);
+  const nextIdRef = useRef<number>(0);
   const delayRef = useRef<boolean>(true);
 
   useEffect(() => {
@@ -107,7 +23,7 @@ const Cubes: React.FC = () => {
         }
 
         const newCube: CubeData = {
-          key: newCubes[newCubes.length - 1].key + 1,
+          id: nextIdRef.current++,
           x: Math.floor(Math.random() * 90),
           y: Math.floor(Math.random() * 70),
         };
@@ -126,10 +42,8 @@ const Cubes: React.FC = () => {
   return (
     <>
       {cubes.map((cube) => (
-        <Cube key={cube.key} x={cube.x} y={cube.y} />
+        <Cube key={cube.id} x={cube.x} y={cube.y} />
       ))}
     </>
   );
 };
-
-export default Cubes;

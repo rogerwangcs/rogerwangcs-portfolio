@@ -1,13 +1,10 @@
-import React from "react";
 import styled from "styled-components";
-import { viewport } from "../../constants/viewport.js";
-import theme from "../../constants/theme.js";
-import { animationTimings } from "../../constants/animationTimings.js";
-import FadeIn from "../common/FadeIn.jsx";
-
-import Cubes from "./Cubes.jsx";
-
 import Logo from "../../assets/bg-logo-foreground.png";
+import { animationTimings } from "../../constants/animationTimings";
+import { theme } from "../../constants/theme";
+import { viewport } from "../../constants/viewport";
+import { FadeIn } from "../common/FadeIn";
+import { Cubes } from "./Cubes";
 
 interface StyledHeaderBgProps {
   mobile: boolean;
@@ -24,7 +21,7 @@ const StyledHeaderBg = styled.div<StyledHeaderBgProps>`
   overflow-x: hidden;
   z-index: -100;
   position: relative;
-  background-color: ${theme.darkblue};
+  background-color: ${theme.colors.darkblue};
   top: 0;
   left: 0;
 
@@ -69,7 +66,7 @@ const isMobileDevice = (): boolean => {
   );
 };
 
-const HeaderBg: React.FC = () => {
+export const HeaderBg = () => {
   const mobile = isMobileDevice();
   const height = window.innerHeight;
 
@@ -86,5 +83,3 @@ const HeaderBg: React.FC = () => {
     </StyledHeaderBg>
   );
 };
-
-export default HeaderBg;

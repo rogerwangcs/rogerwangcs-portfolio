@@ -1,17 +1,11 @@
-import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import Card from "../common/Card";
-import RoundButton from "../common/RoundButton";
+import { Card } from "../common/Card";
+import { RoundButton } from "../common/RoundButton";
 import { Carousel } from "./ProjectCarousel";
 import "./Carousel.scss";
-
 import { projects } from "../../constants/content";
 
-const StyledProjectsSection = styled.div`
-  text-align: center;
-`;
-
-const ProjectsSection = () => {
+export const ProjectsSection = () => {
   const navigate = useNavigate();
 
   const projectCards = projects.map((project, idx) => (
@@ -23,7 +17,7 @@ const ProjectsSection = () => {
   ));
 
   return (
-    <StyledProjectsSection>
+    <div style={{ textAlign: "center" }}>
       <Carousel
         components={[...projectCards, ...projectCards]}
         handleClick={() => {
@@ -33,8 +27,6 @@ const ProjectsSection = () => {
         active={projectCards.length - 1} // start halfway through to avoid buggy transitions at start
       />
       <RoundButton text="See All Projects" link="/projects" scroll />
-    </StyledProjectsSection>
+    </div>
   );
 };
-
-export default ProjectsSection;

@@ -1,12 +1,9 @@
 import { useState } from "react";
-import ReactGA from "react-ga";
-
 import styled from "styled-components";
-import { viewport } from "../../constants/viewport";
-import theme from "../../constants/theme";
-
 import ResumeGraphic from "../../assets/ResumeGraphic.png";
-import RoundButton from "../common/RoundButton";
+import { theme } from "../../constants/theme";
+import { viewport } from "../../constants/viewport";
+import { RoundButton } from "../common/RoundButton";
 
 const ResumeButton = styled.div`
   display: inline-block;
@@ -42,7 +39,9 @@ const StyledResumeGraphic = styled.img<StyledResumeGraphicProps>`
   bottom: 0;
 
   border-radius: 25px 25px 0px 0px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.15);
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.15);
 
   @media (max-width: ${viewport.MOBILE}) {
     width: 90vw;
@@ -76,7 +75,7 @@ const BlueBG = styled.div<BlueBGProps>`
   height: 75px;
   border-radius: 25px;
 
-  background-color: ${theme.hoverblue};
+  background-color: ${theme.colors.hoverblue};
   margin: auto;
   left: 0;
   right: 0;
@@ -86,12 +85,8 @@ const BlueBG = styled.div<BlueBGProps>`
   transform: ${(props) => (props.hover ? "scale(15)" : "scale(1)")};
 `;
 
-const ResumeSection = () => {
+export const ResumeSection = () => {
   const [hover, setHover] = useState(false);
-
-  const handleHover = (hoverState: boolean) => {
-    setHover(hoverState);
-  };
 
   return (
     <StyledResumeSection>
@@ -101,14 +96,8 @@ const ResumeSection = () => {
         rel="noopener noreferrer"
       >
         <ResumeButton
-          onMouseEnter={() => handleHover(true)}
-          onMouseLeave={() => handleHover(false)}
-          onClick={() => {
-            ReactGA.event({
-              category: "Navigate",
-              action: "Viewed Resume",
-            });
-          }}
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => setHover(false)}
         >
           <RoundButton text="See Resume" link="/roger_wang_resume.pdf" />
         </ResumeButton>
@@ -122,5 +111,3 @@ const ResumeSection = () => {
     </StyledResumeSection>
   );
 };
-
-export default ResumeSection;

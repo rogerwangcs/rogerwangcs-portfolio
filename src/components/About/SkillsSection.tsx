@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Divider from "../common/Divider";
+import { Divider } from "../common/Divider";
 import { skills } from "../../constants/content";
 
 const StyledSkillsSection = styled.div`
@@ -39,7 +39,7 @@ const SkillBox = styled.div`
   }
 `;
 
-const SkillsSection = () => {
+export const SkillsSection = () => {
   return (
     <StyledSkillsSection>
       {skills.map((skillBox, idx1) => (
@@ -57,5 +57,3 @@ const SkillsSection = () => {
     </StyledSkillsSection>
   );
 };
-
-export default SkillsSection;

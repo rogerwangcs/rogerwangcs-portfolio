@@ -15,7 +15,9 @@ $level1-left: 4%;
 .carousel-item {
   position: absolute;
   transform-origin: center;
-  transition: transform $carousel-speed, opacity $carousel-speed;
+  transition:
+    transform $carousel-speed,
+    opacity $carousel-speed;
   left: 50%;
   transform: translateX($carousel-offset);
   will-change: transform;
@@ -49,7 +51,9 @@ $level1-left: 4%;
   opacity: 1;
   transform: translateX($carousel-offset + $carousel-gap)
     scale($item-side-scale);
-  transition: transform $carousel-speed, opacity $carousel-speed;
+  transition:
+    transform $carousel-speed,
+    opacity $carousel-speed;
 }
 
 .left-exit {
@@ -64,7 +68,9 @@ $level1-left: 4%;
   opacity: 0;
   transform: translateX($carousel-offset - $offscreen-gap)
     scale($item-out-scale);
-  transition: transform $carousel-speed, opacity $carousel-speed;
+  transition:
+    transform $carousel-speed,
+    opacity $carousel-speed;
 }
 
 // When cards move to the left
@@ -93,5 +99,7 @@ $level1-left: 4%;
   opacity: 0;
   transform: translateX($carousel-offset + $offscreen-gap)
     scale($item-out-scale);
-  transition: transform $carousel-speed, opacity $carousel-speed;
+  transition:
+    transform $carousel-speed,
+    opacity $carousel-speed;
 }

@@ -24,7 +24,7 @@ const SCarouselInner = styled.div`
   }
 `;
 
-interface CarouselProps {
+export interface CarouselProps {
   components: ReactNode[];
   active: number;
   handleClick: () => void;
@@ -50,14 +50,14 @@ export const Carousel = ({
     setDirection("right");
   }, [items.length]);
 
-  const restartTimer = () => {
+  const restartTimer = useCallback(() => {
     if (carouselTimerRef.current) {
       clearInterval(carouselTimerRef.current);
     }
     carouselTimerRef.current = setInterval(() => {
       if (document.hasFocus()) moveLeft();
     }, 5000);
-  };
+  }, [moveLeft]);
 
   useEffect(() => {
     carouselTimerRef.current = setInterval(() => {
@@ -71,7 +71,7 @@ export const Carousel = ({
     };
   }, [moveLeft]);
 
-  const generateItems = () => {
+  const generateItems = useCallback(() => {
     const carouselItems = [];
     let level;
     for (let i = active - 1; i < active + 2; i++) {
@@ -107,7 +107,7 @@ export const Carousel = ({
       );
     }
     return carouselItems;
-  };
+  }, [active, direction, handleClick, items, moveLeft, moveRight]);
 
   return (
     <SCarousel id="carousel" className="noselect">

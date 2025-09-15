@@ -34,7 +34,7 @@ const StyledPageContents = styled.div`
   }
 `;
 
-interface PageSectionProps {
+export interface PageSectionProps {
   color?: string;
   paddingTop?: number;
   paddingBottom?: number;
@@ -42,7 +42,7 @@ interface PageSectionProps {
   children?: ReactNode;
 }
 
-const PageSection = (props: PageSectionProps) => {
+export const PageSection = (props: PageSectionProps) => {
   return (
     <StyledPageSection {...props}>
       {props.fullwidth ? (
@@ -53,5 +53,3 @@ const PageSection = (props: PageSectionProps) => {
     </StyledPageSection>
   );
 };
-
-export default PageSection;

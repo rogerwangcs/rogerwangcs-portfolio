@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import theme from "../../constants/theme";
 import { ReactNode } from "react";
+import styled from "styled-components";
+import { theme } from "../../constants/theme";
 
 interface CentererProps {
   centered?: boolean;
@@ -21,7 +21,7 @@ interface StyledDividerProps {
 }
 
 const StyledDivider = styled.div<StyledDividerProps>`
-  background-color: ${theme.lightblue};
+  background-color: ${theme.colors.lightblue};
   height: ${(props) => (props.big ? "5px" : "4px")};
   width: 100%;
   border-radius: 2px/50%;
@@ -29,13 +29,13 @@ const StyledDivider = styled.div<StyledDividerProps>`
   margin: 15px 0px 15px;
 `;
 
-interface DividerProps {
+export interface DividerProps {
   centered?: boolean;
   big?: boolean;
   children?: ReactNode;
 }
 
-const Divider = (props: DividerProps) => {
+export const Divider = (props: DividerProps) => {
   return (
     <Centerer centered={props.centered}>
       <DividerWrapper>
@@ -45,5 +45,3 @@ const Divider = (props: DividerProps) => {
     </Centerer>
   );
 };
-
-export default Divider;

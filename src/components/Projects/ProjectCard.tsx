@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Divider from "../common/Divider";
-import RoundButton from "../common/RoundButton";
-import CarouselCard from "../common/CarouselCard";
+import { Divider } from "../common/Divider";
+import { RoundButton } from "../common/RoundButton";
+import { CarouselCard } from "../common/CarouselCard";
 
 interface StyledCardProps {
   idx: number;

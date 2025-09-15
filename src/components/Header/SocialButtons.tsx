@@ -1,9 +1,8 @@
-import React from "react";
 import styled from "styled-components";
-import theme from "../../constants/theme";
 import { animationTimings } from "../../constants/animationTimings";
-import FadeIn from "../common/FadeIn";
 import { socials } from "../../constants/content";
+import { theme } from "../../constants/theme";
+import { FadeIn } from "../common/FadeIn";
 
 export interface Social {
   name: string;
@@ -58,7 +57,7 @@ const StyledLink = styled.a`
 
 const ButtonBG = styled.div`
   position: absolute;
-  background-color: ${theme.hoverblue};
+  background-color: ${theme.colors.hoverblue};
   width: 100%;
   height: 44px;
   border-radius: 20px/50%;
@@ -79,7 +78,7 @@ const ButtonBG = styled.div`
   }
 `;
 
-const SocialButtons: React.FC = () => {
+export const SocialButtons = () => {
   const FadeInWithDelay = FadeIn as any;
 
   return (
@@ -103,5 +102,3 @@ const SocialButtons: React.FC = () => {
     </FadeInWithDelay>
   );
 };
-
-export default SocialButtons;

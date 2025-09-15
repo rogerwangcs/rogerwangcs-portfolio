@@ -1,14 +1,12 @@
-import { useEffect } from "react";
-import ReactGA from "react-ga";
-import styled from "styled-components";
-import theme from "../constants/theme";
-import PageSection from "../components/common/PageSection";
-import Divider from "../components/common/Divider";
-import SummarySection from "../components/About/SummarySection";
-import SkillsSection from "../components/About/SkillsSection";
-import ProjectsSection from "../components/About/ProjectsSection";
-import ResumeSection from "../components/About/ResumeSection";
 import { CSSTransition } from "react-transition-group";
+import styled from "styled-components";
+import { ProjectsSection } from "../components/About/ProjectsSection";
+import { ResumeSection } from "../components/About/ResumeSection";
+import { SkillsSection } from "../components/About/SkillsSection";
+import { SummarySection } from "../components/About/SummarySection";
+import { Divider } from "../components/common/Divider";
+import { PageSection } from "../components/common/PageSection";
+import { theme } from "../constants/theme";
 
 const StyledPage = styled.div`
   text-align: center;
@@ -33,39 +31,43 @@ const StyledTransition = styled.div`
   }
 `;
 
-const About = () => {
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
-
+export const About = () => {
   return (
     <StyledTransition>
       <CSSTransition classNames="fade" timeout={1000}>
         {() => (
           <StyledPage>
-            <PageSection color={theme.gray2} paddingBottom={50} paddingTop={50}>
+            <PageSection
+              color={theme.colors.gray2}
+              paddingBottom={50}
+              paddingTop={50}
+            >
               <SummarySection />
             </PageSection>
-            <PageSection color={theme.creme} paddingBottom={50} paddingTop={50}>
-              <Divider centered={true} big={true}>
+            <PageSection
+              color={theme.colors.creme}
+              paddingBottom={50}
+              paddingTop={50}
+            >
+              <Divider centered big>
                 <h2>Tech Stack</h2>
               </Divider>
               <SkillsSection />
             </PageSection>
             <PageSection
-              fullwidth={true}
-              color={theme.gray2}
+              fullwidth
+              color={theme.colors.gray2}
               paddingBottom={50}
               paddingTop={50}
             >
-              <Divider centered={true} big={true}>
+              <Divider centered big>
                 <h2>Projects</h2>
               </Divider>
               <ProjectsSection />
             </PageSection>
             <PageSection
-              fullwidth={true}
-              color={theme.creme}
+              fullwidth
+              color={theme.colors.creme}
               paddingBottom={0}
               paddingTop={0}
             >
@@ -77,5 +79,3 @@ const About = () => {
     </StyledTransition>
   );
 };
-
-export default About;

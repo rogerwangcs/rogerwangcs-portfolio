@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import theme from "../../constants/theme";
-import { viewport } from "../../constants/viewport";
 import { socials } from "../../constants/content";
+import { theme } from "../../constants/theme";
+import { viewport } from "../../constants/viewport";
 
 const StyledFooter = styled.div`
   user-select: none;
@@ -9,7 +9,7 @@ const StyledFooter = styled.div`
   z-index: 100;
   position: relative;
 
-  background-color: ${theme.darkblue};
+  background-color: ${theme.colors.darkblue};
 
   padding-top: 30px;
 
@@ -18,7 +18,7 @@ const StyledFooter = styled.div`
 
   > p {
     font-size: 16px;
-    color: ${theme.gray2};
+    color: ${theme.colors.gray2};
     text-align: center;
   }
 `;
@@ -31,7 +31,7 @@ const StyledIcon = styled.a`
   display: inline-block;
 
   transition: all 200ms ease-in-out;
-  background-color: ${theme.blue};
+  background-color: ${theme.colors.blue};
 
   margin: 15px;
   padding: 10px;
@@ -45,7 +45,7 @@ const StyledIcon = styled.a`
   }
   &:hover {
     cursor: pointer;
-    background-color: ${theme.buttonblue};
+    background-color: ${theme.colors.buttonblue};
     img {
       transform: scale(1.2);
     }
@@ -71,7 +71,7 @@ const SocialButtons = () => {
   );
 };
 
-const Footer = () => {
+export const Footer = () => {
   const date = new Date();
   return (
     <StyledFooter>
@@ -80,5 +80,3 @@ const Footer = () => {
     </StyledFooter>
   );
 };
-
-export default Footer;

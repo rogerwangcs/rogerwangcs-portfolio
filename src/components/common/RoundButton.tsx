@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import theme from "../../constants/theme";
+import { theme } from "../../constants/theme";
 
 interface StyledButtonProps {
   small?: boolean;
@@ -8,7 +8,7 @@ interface StyledButtonProps {
 
 const StyledButton = styled.div<StyledButtonProps>`
   display: inline-block;
-  background-color: ${theme.buttonblue};
+  background-color: ${theme.colors.buttonblue};
 
   padding: ${(props) => (props.small ? "10px 18px" : "12px 28px")};
   border-radius: ${(props) => (props.small ? "20px/50%" : "25px/50%")};
@@ -23,18 +23,18 @@ const StyledButton = styled.div<StyledButtonProps>`
   transition: background-color ease-out 200ms;
   &:hover {
     cursor: pointer;
-    background-color: ${theme.hoverblue};
+    background-color: ${theme.colors.hoverblue};
   }
 `;
 
-interface RoundButtonProps {
+export interface RoundButtonProps {
   text: string;
   link: string;
   small?: boolean;
   scroll?: boolean;
 }
 
-const RoundButton = (props: RoundButtonProps) => {
+export const RoundButton = (props: RoundButtonProps) => {
   const navigate = useNavigate();
 
   const handleNavigate = (url: string) => {
@@ -52,5 +52,3 @@ const RoundButton = (props: RoundButtonProps) => {
     </StyledButton>
   );
 };
-
-export default RoundButton;

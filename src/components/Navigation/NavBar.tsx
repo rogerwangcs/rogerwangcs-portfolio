@@ -1,12 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import styled from "styled-components";
-import theme from "../../constants/theme";
-import { viewport } from "../../constants/viewport";
 import { animationTimings } from "../../constants/animationTimings";
-
-import FadeIn from "../common/FadeIn";
+import { theme } from "../../constants/theme";
+import { viewport } from "../../constants/viewport";
+import { FadeIn } from "../common/FadeIn";
 
 interface SNavBarProps {
   isSticky: boolean;
@@ -15,13 +14,13 @@ interface SNavBarProps {
 const NavContainer = styled.div`
   text-align: center;
   @media (max-width: ${viewport.MOBILE}) {
-    margin-top: 125px;
-  }
-  @media (min-width: ${viewport.MOBILE}) {
     margin-top: 150px;
   }
+  @media (min-width: ${viewport.MOBILE}) {
+    margin-top: 175px;
+  }
   @media (min-width: ${viewport.DESKTOP}) {
-    margin-top: 200px;
+    margin-top: 250px;
   }
 `;
 
@@ -51,7 +50,7 @@ const NavButton = styled.div`
 const NavButtonBG = styled.div`
   z-index: -1;
   position: absolute;
-  background-color: ${theme.hoverblue};
+  background-color: ${theme.colors.hoverblue};
   width: 100%;
   height: 44px;
   border-radius: 20px/50%;
@@ -72,7 +71,7 @@ const NavButtonBG = styled.div`
   }
 `;
 
-const NavBar: React.FC = () => {
+export const NavBar = () => {
   const navigate = useNavigate();
   const [isSticky, setIsSticky] = useState<boolean>(false);
   const navRef = useRef<HTMLDivElement>(null);
@@ -126,5 +125,3 @@ const NavBar: React.FC = () => {
     </FadeInWithDelay>
   );
 };
-
-export default NavBar;

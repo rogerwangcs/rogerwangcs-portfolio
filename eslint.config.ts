@@ -1,9 +1,9 @@
 import js from "@eslint/js";
-import globals from "globals";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
-import tseslint from "typescript-eslint";
 import { defineConfig } from "eslint/config";
+import globals from "globals";
+import tseslint from "typescript-eslint";
 
 export default defineConfig([
   { ignores: ["dist"] },
@@ -34,10 +34,21 @@ export default defineConfig([
         "error",
         { argsIgnorePattern: "^_" },
       ],
+      "@typescript-eslint/no-unused-imports": "error",
       "@typescript-eslint/explicit-function-return-type": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
       "@typescript-eslint/no-explicit-any": "error",
       eqeqeq: ["error", "always"],
+      "sort-imports": [
+        "error",
+        {
+          ignoreCase: false,
+          ignoreDeclarationSort: false,
+          ignoreMemberSort: false,
+          memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
+          allowSeparatedGroups: false,
+        },
+      ],
     },
   },
 ]);

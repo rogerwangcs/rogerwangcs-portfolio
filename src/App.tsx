@@ -1,12 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import "./App.scss";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
-import About from "./screens/About";
-import Projects from "./screens/Projects";
+import { Footer } from "./components/Footer/Footer";
+import { Header } from "./components/Header/Header";
+import { About } from "./screens/About";
+import { Projects } from "./screens/Projects";
 
-const App = () => {
+export const App = () => {
   return (
     <Router>
       <div className="App">
@@ -20,5 +19,3 @@ const App = () => {
     </Router>
   );
 };
-
-export default App;

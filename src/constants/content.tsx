@@ -1,35 +1,28 @@
-import rogerwangImage from "../assets/rogerwang.png";
-import rokutesting1 from "../assets/rokutesting1.png";
-import rokutesting2 from "../assets/rokutesting2.png";
 import amongus1 from "../assets/amongus1.png";
 import amongus2 from "../assets/amongus2.png";
 import amongus3 from "../assets/amongus3.png";
 import amongus4 from "../assets/amongus4.png";
 import bostonfood1 from "../assets/bostonfood1.png";
 import bostonfood2 from "../assets/bostonfood2.png";
-import obsvis1 from "../assets/obsvis1.png";
-import obsvis2 from "../assets/obsvis2.png";
-import litedoc1 from "../assets/litedoc1.png";
-import litedoc2 from "../assets/litedoc2.png";
 import dijkstras1 from "../assets/dijkstras1.png";
 import dijkstras2 from "../assets/dijkstras2.png";
 import dijkstras3 from "../assets/dijkstras3.png";
+import github from "../assets/github.png";
+import gmail from "../assets/gmail.png";
+import linkedin from "../assets/linkedin.png";
+import litedoc1 from "../assets/litedoc1.png";
+import litedoc2 from "../assets/litedoc2.png";
 import liveSubtitles1 from "../assets/live-subtitles1.png";
 import liveSubtitles2 from "../assets/live-subtitles2.png";
-import writefast1 from "../assets/writefast1.jpg";
-import writefast2 from "../assets/writefast2.jpg";
-import writefast3 from "../assets/writefast3.jpg";
-import rogersblog1 from "../assets/rogersblog1.jpg";
-import rogersblog2 from "../assets/rogersblog2.jpg";
-import rogersblog3 from "../assets/rogersblog3.jpg";
-import betterBcHousing from "../assets/better-bc-housing.png";
-import github from "../assets/github.png";
-import linkedin from "../assets/linkedin.png";
-import gmail from "../assets/gmail.png";
+import obsvis1 from "../assets/obsvis1.png";
+import obsvis2 from "../assets/obsvis2.png";
+import rogerwangImage from "../assets/rogerwang.png";
+import rokutesting1 from "../assets/rokutesting1.png";
+import rokutesting2 from "../assets/rokutesting2.png";
 
 export const header = {
   title: "Roger Wang",
-  subtitle: "Software Engineer @ NYC",
+  subtitle: "Software Engineer @ Boston",
 };
 
 export const summary = {
@@ -40,7 +33,7 @@ export const SummaryText = () => {
     <p>
       <strong>Hey!</strong> 👋
       <br /> I'm <strong>Roger</strong>. currently a software engineer based in
-      NYC working on the Discovery+ 🦈 Roku client team.
+      Boston working on the Verily Workbench Research Platform.
     </p>
   );
 };
@@ -72,7 +65,7 @@ export const skills = [
 
 export const projects = [
   {
-    name: "Roku Testing Framework",
+    name: "Roku App Testing Framework",
     shortname: "Roku Test Framework",
     subtitle: "Spring 2022 - Discovery Inc.",
     images: [rokutesting1, rokutesting2],
@@ -86,12 +79,12 @@ export const projects = [
     ],
   },
   {
-    name: "IRL Among Us",
-    subtitle: "Spring 2021  - Boston College ACF",
+    name: "In-Person Among Us",
+    subtitle: "Spring 2021  - Boston College",
     images: [amongus1, amongus2, amongus3, amongus4],
     imageFit: "contain",
     description:
-      "An ambitious project to bring the fun of Among Us to real life. Using proximity detection by emitting and receiving high frequency sounds and QR code scanning, players can complete tasks, kill, sabotage, and call for meetings. Developed with Flutter along with David Shen for Boston College ACF.",
+      "An ambitious project to bring the fun of Among Us to real life. Using proximity detection by emitting and receiving high frequency sounds and QR code scanning, players can complete tasks, kill, sabotage, and call for meetings. Developed with Flutter along with David Shen for Boston College.",
     links: [
       {
         name: "Source Code",
@@ -105,7 +98,7 @@ export const projects = [
     subtitle: "Fall 2020",
     images: [bostonfood1, bostonfood2],
     description:
-      "For Pr. Nam Wook Kim's Visualization course at Boston College. An interactive visualization with drill-down functionality to explore various restaurants in the Greater Boston area and learn more about the nutrition of their menu items. Built with d3.js",
+      "For Professor Nam Wook Kim's Visualization course at Boston College. An interactive visualization with drill-down functionality to explore various restaurants in the Greater Boston area and learn more about the nutrition of their menu items. Built with d3",
     links: [
       {
         name: "Source Code",
@@ -119,7 +112,7 @@ export const projects = [
     subtitle: "Summer 2020 - NASA Jet Propulsion Lab",
     images: [obsvis1, obsvis2],
     description:
-      "This tool interfaces with a database of observed telemetry. It provides a user friendly interface for instrument operators view past observations, note anomalies and errors, as well as generate an anomly report. The tool is developed as part of the MAIA mission. Built with React.js",
+      "This tool interfaces with a database of observed telemetry. It provides a user friendly interface for instrument operators view past observations, note anomalies and errors, as well as generate an anomly report. The tool is developed as part of the MAIA mission. Built with React",
     links: [
       {
         name: "Mission Status",
@@ -180,54 +173,6 @@ export const projects = [
       {
         name: "Source Code",
         link: "https://github.com/rogerwangcs/ar-dialogue-subtitles",
-      },
-    ],
-  },
-  {
-    name: "Write Fast",
-    subtitle: "Summer 2018",
-    images: [writefast1, writefast2, writefast3],
-    description:
-      "An attempt to relieve writers block. A clean writing interface without distractions helps you focus, while the glowy red border nudges to continue writing.",
-    links: [
-      {
-        name: "See It",
-        link: "https://rogerwangcs.github.io/writefast",
-      },
-      {
-        name: "Source Code",
-        link: "https://github.com/rogerwangcs/writefast",
-      },
-    ],
-  },
-  {
-    name: "GraphQL Blogging Platform",
-    shortname: "Blog Platform",
-    subtitle: "Summer 2018",
-    images: [rogersblog1, rogersblog2, rogersblog3],
-    description:
-      "Blogging Platform built using React, Apollo, Express, Graphql and MongoDB. Features authentication and authorization with Auth0, markup blog editor and individual user profiles.",
-    links: [
-      {
-        name: "See it",
-        link: "https://rogers-react-blog.herokuapp.com/",
-      },
-    ],
-  },
-  {
-    name: "Better BC Housing",
-    subtitle: "April 2018",
-    images: [betterBcHousing],
-    description:
-      "Reinvents the obsolete housing selection system at Boston College with a React, Node, and MongoDB single page web application. Features Beautiful and interactive map interface where students can navigate to buildings and rooms of choice. Accommosubtitles live room picking, giving students real time feedback during the selection process. 🏆 Won best UI/UX at BC's Hack The Heights 2018 hackathon.",
-    links: [
-      {
-        name: "Devpost",
-        link: "https://devpost.com/software/better-bc-housing",
-      },
-      {
-        name: "Source Code",
-        link: "https://github.com/MikeN64/Better-BC-Housing",
       },
     ],
   },

@@ -26,14 +26,16 @@ const Portrait = styled.img`
   width: 300px;
   height: 300px;
   border-radius: 15px;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+  box-shadow:
+    0 10px 15px rgba(0, 0, 0, 0.25),
+    0 5px 5px rgba(0, 0, 0, 0.22);
   @media (max-width: 750px) {
     width: 225px;
     height: 225px;
   }
 `;
 
-const SummarySection = () => {
+export const SummarySection = () => {
   return (
     <StyledSummarySection>
       <Portrait draggable="false" src={summary.picture} />
@@ -43,5 +45,3 @@ const SummarySection = () => {
     </StyledSummarySection>
   );
 };
-
-export default SummarySection;

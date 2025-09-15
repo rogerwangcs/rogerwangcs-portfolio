@@ -1,9 +1,8 @@
-import React from "react";
 import styled from "styled-components";
 import { viewport } from "../../constants/viewport";
-import FadeIn from "../common/FadeIn";
 import { animationTimings } from "../../constants/animationTimings";
 import { header } from "../../constants/content";
+import { FadeIn } from "../common/FadeIn";
 
 interface FadeInProps {
   delay: number;
@@ -50,7 +49,7 @@ const StyledText = styled(FadeIn)<FadeInProps>`
   }
 `;
 
-export const HeaderText: React.FC = () => {
+export const HeaderText = () => {
   return (
     <StyledText delay={animationTimings.loadDelay + 550}>
       <h1>{header.title}</h1>

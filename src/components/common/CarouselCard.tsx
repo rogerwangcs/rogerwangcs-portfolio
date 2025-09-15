@@ -1,19 +1,10 @@
 import { useState } from "react";
-import { viewport } from "../../constants/viewport";
-import theme from "../../constants/theme";
 import styled from "styled-components";
+import { theme } from "../../constants/theme";
+import { viewport } from "../../constants/viewport";
 
 interface SCarouselCardProps {
   clickable?: boolean;
-  imageFit?: string;
-}
-
-interface CarouselDotProps {
-  selected?: boolean;
-}
-
-interface CarouselCardProps {
-  images: string[];
   imageFit?: string;
 }
 
@@ -28,7 +19,9 @@ const SCarouselCard = styled.div<SCarouselCardProps>`
     z-index: 1;
 
     border-radius: 25px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+    box-shadow:
+      0 5px 10px rgba(0, 0, 0, 0.25),
+      0 5px 5px rgba(0, 0, 0, 0.22);
 
     &:hover {
       cursor: ${(props) => (props.clickable ? "pointer" : "default")};
@@ -50,21 +43,30 @@ const SCarouselCard = styled.div<SCarouselCardProps>`
   }
 `;
 
+interface CarouselDotProps {
+  selected: boolean;
+}
+
 const CarouselDot = styled.div<CarouselDotProps>`
   width: 10px;
   height: 10px;
   margin: 3px;
   border-radius: 10px;
   background-color: ${(props) =>
-    props.selected ? theme.buttonblue : theme.gray0};
+    props.selected ? theme.colors.buttonblue : theme.colors.gray0};
 
   &:hover {
     cursor: pointer;
-    background-color: ${theme.hoverblue};
+    background-color: ${theme.colors.hoverblue};
   }
 `;
 
-const CarouselCard = (props: CarouselCardProps) => {
+export interface CarouselCardProps {
+  images: string[];
+  imageFit?: string;
+}
+
+export const CarouselCard = (props: CarouselCardProps) => {
   const images = props.images;
   const clickable = images.length > 1;
   const [selectedIdx, setSelectedIdx] = useState(0);
@@ -97,5 +99,3 @@ const CarouselCard = (props: CarouselCardProps) => {
     </SCarouselCard>
   );
 };
-
-export default CarouselCard;

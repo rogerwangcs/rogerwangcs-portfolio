@@ -16,11 +16,11 @@ const animationRule = css`
   ${animation} 600ms;
 `;
 
-interface FadeInProps {
+export interface FadeInProps {
   delay?: number;
 }
 
-const FadeIn = styled.div<FadeInProps>`
+export const FadeIn = styled.div<FadeInProps>`
   > * {
     backface-visibility: hidden;
     opacity: 0;
@@ -31,5 +31,3 @@ const FadeIn = styled.div<FadeInProps>`
     animation-fill-mode: forwards;
   }
 `;
-
-export default FadeIn;

@@ -1,9 +1,9 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
-import Background from "./Background.js";
-import NavBar from "../Navigation/NavBar.jsx";
-import SocialButtons from "./SocialButtons.jsx";
-import { HeaderText } from "./Text.jsx";
+import { NavBar } from "../Navigation/NavBar";
+import { HeaderBg } from "./Background";
+import { SocialButtons } from "./SocialButtons";
+import { HeaderText } from "./Text";
 
 interface HeaderContentProps {
   height: number;
@@ -18,17 +18,26 @@ const HeaderContent = styled.div<HeaderContentProps>`
   }
 `;
 
-const Header: React.FC = () => {
+export const Header = () => {
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowHeight(window.innerHeight);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
-      <Background />
+      <HeaderBg />
       <SocialButtons />
-      <HeaderContent height={window.innerHeight}>
+      <HeaderContent height={windowHeight}>
         <HeaderText />
         <NavBar />
       </HeaderContent>
     </>
   );
 };
-
-export default Header;
