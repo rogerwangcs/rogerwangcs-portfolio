@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef, useCallback, ReactNode } from "react";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { ReactNode, useCallback, useEffect, useRef, useState } from "react";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import styled from "styled-components";
 import { viewport } from "../../constants/viewport";
 
@@ -107,7 +107,15 @@ export const Carousel = ({
       );
     }
     return carouselItems;
-  }, [active, direction, handleClick, items, moveLeft, moveRight]);
+  }, [
+    active,
+    direction,
+    handleClick,
+    items,
+    moveLeft,
+    moveRight,
+    restartTimer,
+  ]);
 
   return (
     <SCarousel id="carousel" className="noselect">
@@ -141,7 +149,7 @@ const CarouselItem = ({
   };
 
   return (
-    <div className={"carousel-item level" + level} onClick={handleItemClick}>
+    <div className={`carousel-item level${level}`} onClick={handleItemClick}>
       {component}
     </div>
   );

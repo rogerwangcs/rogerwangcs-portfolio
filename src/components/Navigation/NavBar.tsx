@@ -104,10 +104,8 @@ export const NavBar = () => {
     };
   }, []);
 
-  const FadeInWithDelay = FadeIn as any;
-
   return (
-    <FadeInWithDelay delay={animationTimings.loadDelay + 750}>
+    <FadeIn delay={animationTimings.loadDelay + 750}>
       <NavContainer>
         <div ref={navRef}>
           <SNavBar isSticky={isSticky}>
@@ -122,6 +120,6 @@ export const NavBar = () => {
           </SNavBar>
         </div>
       </NavContainer>
-    </FadeInWithDelay>
+    </FadeIn>
   );
 };

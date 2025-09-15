@@ -29,7 +29,7 @@ const StyledButton = styled.div<StyledButtonProps>`
 
 export interface RoundButtonProps {
   text: string;
-  link: string;
+  link?: string;
   small?: boolean;
   scroll?: boolean;
 }
@@ -46,7 +46,7 @@ export const RoundButton = (props: RoundButtonProps) => {
     <StyledButton
       className="RoundButton"
       {...props}
-      onClick={() => handleNavigate(props.link)}
+      onClick={() => (props.link ? handleNavigate(props.link) : null)}
     >
       <h3>{props.text}</h3>
     </StyledButton>

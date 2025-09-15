@@ -79,10 +79,8 @@ const ButtonBG = styled.div`
 `;
 
 export const SocialButtons = () => {
-  const FadeInWithDelay = FadeIn as any;
-
   return (
-    <FadeInWithDelay delay={animationTimings.loadDelay + 1000}>
+    <FadeIn delay={animationTimings.loadDelay + 1000}>
       <StyledSocialButtons>
         {socials.map((social: Social, idx: number) => (
           <StyledLink
@@ -99,6 +97,6 @@ export const SocialButtons = () => {
           </StyledLink>
         ))}
       </StyledSocialButtons>
-    </FadeInWithDelay>
+    </FadeIn>
   );
 };

@@ -27,7 +27,7 @@ export const FadeIn = styled.div<FadeInProps>`
     transform-origin: center;
     animation: ${animationRule};
     animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    animation-delay: ${(props) => (props.delay || 0) + "ms"};
+    animation-delay: ${(props) => `${props.delay || 0  }ms`};
     animation-fill-mode: forwards;
   }
 `;

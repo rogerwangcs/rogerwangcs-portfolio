@@ -18,8 +18,8 @@ export const Button = styled.div<ButtonProps>`
 
   border: ${(props) =>
     props.type === "outline"
-      ? "solid 2px " + theme.colors.lightblue
-      : "solid 2px " + theme.colors.lightblue};
+      ? `solid 2px ${  theme.colors.lightblue}`
+      : `solid 2px ${  theme.colors.lightblue}`};
 
   p {
     font-family: "Raleway", sans-serif;
@@ -38,8 +38,8 @@ export const Button = styled.div<ButtonProps>`
     cursor: pointer;
     border: ${(props) =>
       props.type === "outline"
-        ? "solid 2px " + theme.colors.hoverblue
-        : "solid 2px " + theme.colors.hoverblue};
+        ? `solid 2px ${  theme.colors.hoverblue}`
+        : `solid 2px ${  theme.colors.hoverblue}`};
     background-color: ${(props) =>
       props.type === "outline"
         ? theme.colors.lightblue

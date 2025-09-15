@@ -6,7 +6,6 @@ import reportWebVitals from "./utils/reportWebVitals";
 const container = document.getElementById("root");
 const root = createRoot(container!);
 
-console.log("asd");
 root.render(
   <React.StrictMode>
     <App />

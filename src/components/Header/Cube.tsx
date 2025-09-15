@@ -77,9 +77,9 @@ export const Cube = ({ x, y }: CubeProps) => {
     <StyledCube
       style={{
         position: "absolute",
-        top: y + "vh",
-        left: x + "vw",
-        display: display,
+        top: `${y  }vh`,
+        left: `${x  }vw`,
+        display,
       }}
     />
   );

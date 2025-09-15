@@ -12,7 +12,7 @@ interface HeaderContentProps {
 const HeaderContent = styled.div<HeaderContentProps>`
   > * {
     position: absolute;
-    top: ${(props) => props.height / 2 + "px"};
+    top: ${(props) => `${props.height / 2  }px`};
     left: 50vw;
     transform: translate(-50%, -50%);
   }

@@ -11,8 +11,8 @@ interface StyledPageSectionProps {
 const StyledPageSection = styled.div<StyledPageSectionProps>`
   background-color: ${(props) => props.color};
   width: 100%;
-  padding-top: ${(props) => (props.paddingTop || 0) + "px"};
-  padding-bottom: ${(props) => (props.paddingBottom || 0) + "px"};
+  padding-top: ${(props) => `${props.paddingTop || 0  }px`};
+  padding-bottom: ${(props) => `${props.paddingBottom || 0  }px`};
 `;
 
 const StyledPageContents = styled.div`
@@ -30,7 +30,7 @@ const StyledPageContents = styled.div`
     text-align: left;
   }
   @media (min-width: ${viewport.DESKTOP}) {
-    width: ${viewport.DESKTOP_CONTENT_WIDTH + "px"};
+    width: ${`${viewport.DESKTOP_CONTENT_WIDTH  }px`};
   }
 `;
 

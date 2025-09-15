@@ -43,13 +43,13 @@ export const SkillsSection = () => {
   return (
     <StyledSkillsSection>
       {skills.map((skillBox, idx1) => (
-        <SkillBox key={"skill-box-" + idx1}>
+        <SkillBox key={`skill-box-${  idx1}`}>
           <Divider>
             <h3>{skillBox.name}</h3>
           </Divider>
           <div className="items">
             {skillBox.items.map((skill, idx2) => (
-              <p key={"skill-" + idx2}>{skill}</p>
+              <p key={`skill-${  idx2}`}>{skill}</p>
             ))}
           </div>
         </SkillBox>

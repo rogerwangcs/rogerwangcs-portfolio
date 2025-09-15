@@ -9,8 +9,7 @@
     "dev": "start",
     "build": "tsc -b && vite build",
     "lint": "npx --node-options='--experimental-strip-types' eslint --flag unstable_native_nodejs_ts_config .",
-    "lint:fix": "npx --node-options='--experimental-strip-types' eslint --flag unstable_native_nodejs_ts_config . --fix",
-    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
+    "lint:fix": "npm run lint -- --fix",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
     "preview": "vite preview"
   },

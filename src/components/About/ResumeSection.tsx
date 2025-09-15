@@ -90,16 +90,12 @@ export const ResumeSection = () => {
 
   return (
     <StyledResumeSection>
-      <a
-        href="/roger_wang_resume.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href="/roger_wang_resume.pdf" target="_blank">
         <ResumeButton
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
         >
-          <RoundButton text="See Resume" link="/roger_wang_resume.pdf" />
+          <RoundButton text="See Resume" />
         </ResumeButton>
       </a>
       <BlueBG hover={hover} />

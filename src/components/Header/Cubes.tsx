@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Cube, CubeData } from "./Cube";
 
 export const Cubes = () => {

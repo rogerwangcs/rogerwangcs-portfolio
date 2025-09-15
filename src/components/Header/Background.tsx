@@ -26,13 +26,13 @@ const StyledHeaderBg = styled.div<StyledHeaderBgProps>`
   left: 0;
 
   width: 100vw;
-  height: ${(props) => (props.mobile ? props.height + "px" : "100vh")};
+  height: ${(props) => (props.mobile ? `${props.height  }px` : "100vh")};
 `;
 
 const LogoWrapper = styled(FadeIn)<LogoWrapperProps>`
   position: absolute;
 
-  top: ${(props) => (props.mobile ? props.height / 2 + "px" : "50vh")};
+  top: ${(props) => (props.mobile ? `${props.height / 2  }px` : "50vh")};
   left: 50vw;
 
   -webkit-backface-visibility: hidden; /* add to fix webkit bug jitter */

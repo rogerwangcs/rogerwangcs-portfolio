@@ -32,8 +32,8 @@ export const SummaryText = () => {
   return (
     <p>
       <strong>Hey!</strong> 👋
-      <br /> I'm <strong>Roger</strong>. currently a software engineer based in
-      Boston working on the Verily Workbench Research Platform.
+      <br /> I'm <strong>Roger</strong>, currently a software engineer based in
+      Boston working on the Verily Workbench research platform.
     </p>
   );
 };
@@ -42,24 +42,23 @@ export const skills = [
   {
     name: "Languages",
     items: [
-      "Python",
       "Javascript",
-      "Brightscript",
       "Java",
-      "C",
+      "Python",
+      "HCL",
       "Golang",
-      "Dart",
       "SQL",
       "HTML/CSS",
+      "Bash",
     ],
   },
   {
-    name: "Development",
-    items: ["React", "Node", "Roku", "Flutter", "Graphql", "MongoDB", "MySQL"],
+    name: "Frameworks and Libraries",
+    items: ["React", "Node", "PostgresSQL"],
   },
   {
-    name: "Data Analysis",
-    items: ["Numpy + Pandas", "Matplotlib"],
+    name: "Infrastructure",
+    items: ["Terraform", "AWS", "Google Cloud"],
   },
 ];
 

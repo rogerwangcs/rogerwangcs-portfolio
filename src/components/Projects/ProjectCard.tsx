@@ -1,7 +1,7 @@
 import styled from "styled-components";
+import { CarouselCard } from "../common/CarouselCard";
 import { Divider } from "../common/Divider";
 import { RoundButton } from "../common/RoundButton";
-import { CarouselCard } from "../common/CarouselCard";
 
 interface StyledCardProps {
   idx: number;
@@ -71,7 +71,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
   const linkComponents = props.links ? (
     props.links.map((link, idx) => (
       <a key={idx} href={link.link} target="_blank" rel="noopener noreferrer">
-        <RoundButton small text={link.name} link={link.link} />
+        <RoundButton small text={link.name} />
       </a>
     ))
   ) : (
